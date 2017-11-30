@@ -1,0 +1,12 @@
+[unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=nobody
+Group=nogroup
+WorkingDirectory=/home/grt1st/ctf_first
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind unix:/home/grt1st/ctf_d/ctf_django.sock ctf_django.wsgi
+
+[Install]
+WantedBy=multi-user.target

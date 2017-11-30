@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block html_content %}
+    </br>
+<nav id="navbar" class="navbar navbar-light bg-light">
+  <a class="navbar-brand text-secondary" href="#">target: {{ url }}</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#status">@status</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#title">@title</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#content">@content</a>
+    </li>
+  </ul>
+</nav>
+
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="height:300px;overflow-y:scroll;">
+  <h4 id="status" class="text-secondary">@status</h4>
+  <p>{{ status_code }}</p>
+  <h4 id="title" class="text-secondary">@title</h4>
+  <p>{{ web_title }}</p>
+  <h4 id="content" class="text-secondary">@content</h4>
+  <p>{{ content }}</p>
+</div>
+
+{% endblock %}

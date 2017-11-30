@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+{% block css %}{% endblock %}
+</head>
+<body>
+
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="container">
+
+<img src="/static/5lQ6J2Rpt8OYeT1v9hlRcL6sgi9xoNVIT9jIzpVh.jpg" alt="My image"/>
+
+    <code style="font-size:100%">hello, uesr: {{ user }}</code>
+
+<br />
+
+<nav class="navbar navbar-light bg-light">
+<form action="/" method="post" class="form-inline">
+        <a class="navbar-brand">Url Enter:</a>
+        {% csrf_token %}
+    <div class="col-auto input-group">
+         <span class="input-group-addon" id="basic">https?://</span>
+        {{ form.target|attr:"placeholder:url"|attr:"class:form-control mr-sm-2"|attr:"aria-describedby:basic-addon1" }}
+    </div>
+    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit</button>
+
+</form>
+</nav>
+
+<small class="form-text text-muted">
+        You can input any url you like
+    </small>
+
+{% block html_content %}{% endblock %}
+
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+</body>
+</html>
